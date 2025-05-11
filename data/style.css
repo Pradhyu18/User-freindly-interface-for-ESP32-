@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+}
+
+h2, h3 {
+  color: #2c3e50;
+  margin-top: 25px;
+}
+
+/* Temperature Section */
+.temperature-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.temperature-display {
+  flex: 2;
+}
+
+.temperature-control {
+  flex: 1;
+  text-align: right;
+}
+
+.temperature-selector {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-selector button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.temperature-selector input {
+  width: 60px;
+  text-align: center;
+  margin: 0 10px;
+  -moz-appearance: textfield;
+}
+
+.temperature-selector input::-webkit-outer-spin-button,
+.temperature-selector input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#currentTemp {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+#targetTemp {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* Button Styles */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Input Styles */
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 5px;
+  width: 200px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* User Management Sections */
+div:nth-of-type(2), div:nth-of-type(3) {
+  background-color: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Current User Display */
+#currentUserDisplay {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* User List Styles */
+#userList {
+  list-style-type: none;
+  padding: 0;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#userList li {
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border-left: 4px solid #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+  
+  .temperature-section {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .temperature-control {
+      text-align: center;
+      margin-top: 15px;
+  }
+  
+  div:first-of-type, div:nth-of-type(2), div:nth-of-type(3) {
+      padding: 15px;
+  }
+  
+  input, .temperature-selector input {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 5px 0;
+  }
+  
+  button {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
+
+/* Add/Remove User Button Styles */
+button[onclick*="addUser"][onclick*="'add'"] {
+  background-color: #2ecc71;
+}
+
+button[onclick*="addUser"][onclick*="'add'"]:hover {
+  background-color: #27ae60;
+}
+
+button[onclick*="addUser"][onclick*="'remove'"] {
+  background-color: #e74c3c;
+}
+
+button[onclick*="addUser"][onclick*="'remove'"]:hover {
+  background-color: #c0392b;
+}

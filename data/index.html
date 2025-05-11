@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Control and User Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Temperature Control and User Management</h1>
+
+    <!-- Temperature Display Section -->
+    <div class="temperature-section">
+        <div class="temperature-display">
+            <h2>Current Temperature: <span id="currentTemp">0.0</span>°C</h2>
+            <h2>Target Temperature: <span id="targetTemp">22.0</span>°C</h2>
+        </div>
+        <div class="temperature-control">
+            <div class="temperature-selector">
+                <button onclick="adjustTemperature(-1)">-</button>
+                <input type="number" id="tempInput" min="10" max="40" step="1" value="22" 
+                       onchange="setTargetTemperature(this.value)">
+                <button onclick="adjustTemperature(1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <h2>User Management</h2>
+
+    <!-- Add User Section -->
+    <div>
+        <input type="text" id="newUser" placeholder="Enter new username" />
+        <input type="number" id="newUserTemp" min="10" max="40" step="1" value="22" placeholder="Target temp" />
+        <button onclick="addUser(document.getElementById('newUser').value, 'add', document.getElementById('newUserTemp').value)">Add User</button>
+        <button onclick="addUser(document.getElementById('newUser').value, 'remove', 0)">Remove User</button>
+    </div>
+
+    <!-- Switch User Section -->
+    <div>
+        <input type="text" id="switchUser" placeholder="Enter username to switch" />
+        <button onclick="switchUser(document.getElementById('switchUser').value)">Switch User</button>
+    </div>
+
+    <h3>Current User: <span id="currentUserDisplay">Default_User</span></h3>
+
+    <h3>All Users:</h3>
+    <ul id="userList">
+        <li>Default_User (22°C)</li>
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

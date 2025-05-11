@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../../arduinoProjects"
+		},
+		{
+			"name": "esp32_wifi_connection",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
